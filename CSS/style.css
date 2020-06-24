@@ -1,0 +1,146 @@
+/*----------Généralités----------*/
+:root {
+    --light-bckgnd: #FFFFFF;
+    --grey-bckgnd: #F0F0F0;
+    --dark-bckgnd: #444444;
+    --orange: #ED786A;
+    --hover-orange: #FD887A;
+    --red: #CC0000;
+    --light-grey: #888888;
+    --mid-grey: #777777;
+    --grey: #666666;
+    --dark-grey: #3C3C3C;
+    --font-title: 'Arvo', serif;
+    --font-text: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background: var(--light-bckgnd);
+    color: var(--mid-grey);
+    font-family: var(--font-text), 'sans-serif';
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover, a:active {
+        color: var(--hover-orange);
+    }
+
+/* ----------titres----------*/
+/*TODO text shadow*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: var(--orange);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+h5, h6 {
+    margin-bottom: 15px;
+}
+
+/*----------Framework----------*/
+/*--------Layout--------*/
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*--------Page--------*/
+
+/*------Menu------*/
+/*----Btn burger----*/
+[for="burger-cmd"] {
+    background: var(--grey-bckgnd);
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    transition: background 500ms;
+    width: 50px;
+}
+
+[for="burger-cmd"] span{
+    background: var(--mid-grey);
+    flex-basis: 8px;
+    opacity: 1;
+    transition: opacity 300ms, background 500ms, transform 600ms;
+}
+
+#burger-cmd:checked + [for="burger-cmd"] {
+    /*Lorsque burger est coché le bouton change d'aspect'*/
+    background: var(--mid-grey);
+}
+
+#burger-cmd:checked + [for="burger-cmd"] span{
+    background: var(--grey-bckgnd);
+}
+
+/*rotation des span 1 et 3 et masquage span 2*/
+#burger-cmd:checked + [for="burger-cmd"] span:nth-child(1){
+    transform:  translateX(0px) translateY(16px) rotate(-45deg);
+}
+
+#burger-cmd:checked + [for="burger-cmd"] span:nth-child(2){
+    opacity: 0;
+}
+
+#burger-cmd:checked + [for="burger-cmd"] span:nth-child(3){
+    transform:  translateX(0px) translateY(-16px) rotate(45deg);
+}
+
+
+#burger-cmd {
+    /*masquer la checkbox*/
+    display: none;
+}
+
+/*----Menu nav----*/
+#main-menu {
+    /*masquer le menu*/
+    display: none;
+}
+
+    #burger-cmd:checked ~ #main-menu {
+        /*Démasquer menu si checkbox coché*/
+        display: block;
+    }
+
+/*------Titre + phrase------*/
+.title {
+    /*top: 150px;*/
+    text-align: center;
+}
+
+
+
+/*----------10----------*/
+/*--------8--------*/
+/*------6------*/
+/*----4----*/
