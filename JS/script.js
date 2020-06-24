@@ -1,10 +1,12 @@
-let burgerCheck = document.querySelector("#burger-cmd");
-burgerCheck.addEventListener("")
-
+// affiche ou masque le menu nav en fonction de l'etat de la checkbox'
 $("input[name=burger-check]").change(function () {
     if ($(this).is(":checked")){
-        // #main-menu display block
+        console.log("dis block");
+        // $("#main-menu").css("display", "block");
+        $("#main-menu").css("flex-basis", "250px");
     } else {
-        // #main-menu display none
+        console.log("dis none");
+        // $("#main-menu").css("display", "none");
+        $("#main-menu").css("flex-basis", "0");
     }
 });

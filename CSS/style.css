@@ -37,24 +37,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 36px;
-    font-weight: 900;
+    /*font-size: 36px;*/
+    font-size: 78px;
+    letter-spacing: 10px;
     margin-bottom: 30px;
     color: var(--orange);
 }
 
 h2 {
-    font-size: 28px;
+    /*font-size: 28px;*/
+    font-size: 70px;
     margin-bottom: 25px;
 }
 
 h3 {
-    font-size: 22px;
+    /*font-size: 22px;*/
+    font-size: 64px;
     margin-bottom: 20px;
 }
 
 h4 {
-    font-size: 18px;
+    /*font-size: 18px;*/
+    font-size: 60px;
     margin-bottom: 18px;
 }
 
@@ -67,28 +71,37 @@ h5, h6 {
 .container {
     padding-left: 15px;
     padding-right: 15px;
+    /*TODO déplacer la page lors de l'ouverture du menu'*/
 }
 
 /*--------Page--------*/
+
+/*------Body------*/
+body {
+    display: flex;
+}
 
 /*------Menu------*/
 /*----Btn burger----*/
 [for="burger-cmd"] {
     background: var(--grey-bckgnd);
+    border-radius: 4px;
+    /*TODO box-shadow: ;*/
     display: flex;
     flex-direction: column;
-    height: 50px;
+    height: 40px;
     justify-content: space-between;
+    margin-bottom: 30px;
     margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px;
+    margin-top: 10px;
+    padding: 12px 22px;
     transition: background 500ms;
-    width: 50px;
+    width: 60px;
 }
 
 [for="burger-cmd"] span{
     background: var(--mid-grey);
-    flex-basis: 8px;
+    flex-basis: 2px;
     opacity: 1;
     transition: opacity 300ms, background 500ms, transform 600ms;
 }
@@ -104,7 +117,7 @@ h5, h6 {
 
 /*rotation des span 1 et 3 et masquage span 2*/
 #burger-cmd:checked + [for="burger-cmd"] span:nth-child(1){
-    transform:  translateX(0px) translateY(16px) rotate(-45deg);
+    transform:  translateX(0px) translateY(7px) rotate(-45deg);
 }
 
 #burger-cmd:checked + [for="burger-cmd"] span:nth-child(2){
@@ -112,7 +125,7 @@ h5, h6 {
 }
 
 #burger-cmd:checked + [for="burger-cmd"] span:nth-child(3){
-    transform:  translateX(0px) translateY(-16px) rotate(45deg);
+    transform:  translateX(0px) translateY(-7px) rotate(45deg);
 }
 
 
@@ -123,21 +136,42 @@ h5, h6 {
 
 /*----Menu nav----*/
 #main-menu {
-    /*masquer le menu*/
-    display: none;
+    background: var(--dark-bckgnd);
+    color: var(--light-bckgnd);
+    /*position: absolute;*/
+    /*position: fixed;*/
+    flex-basis: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    /*width: 250px;*/
+    /*z-index: 1;*/
 }
-
-    #burger-cmd:checked ~ #main-menu {
-        /*Démasquer menu si checkbox coché*/
-        display: block;
-    }
 
 /*------Titre + phrase------*/
 .title {
     /*top: 150px;*/
     text-align: center;
+    padding-bottom: 50px;
 }
 
+#phrase {
+    /*font-size: 22px;*/
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+/*------Séparateurs------*/
+.separator {
+    display: flex;
+    flex-direction: column;
+    height: 15px;
+    justify-content: space-between;
+}
+
+    .separator span{
+        background: var(--grey-bckgnd);
+        height: 3px;
+    }
 
 
 /*----------10----------*/
