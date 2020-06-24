@@ -32,33 +32,37 @@ a {
 /* ----------titres----------*/
 /*TODO text shadow*/
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-title);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h1 {
-    /*font-size: 36px;*/
-    font-size: 78px;
+    font-family: var(--font-title);
+    font-size: 36px;
+    /*font-size: 78px;*/
+    font-weight: 700;
     letter-spacing: 10px;
     margin-bottom: 30px;
     color: var(--orange);
 }
 
 h2 {
-    /*font-size: 28px;*/
-    font-size: 70px;
+    font-size: 28px;
+    /*font-size: 70px;*/
+    letter-spacing: 4px;
     margin-bottom: 25px;
 }
 
 h3 {
-    /*font-size: 22px;*/
-    font-size: 64px;
+    font-size: 22px;
+    /*font-size: 35px;*/
+    font-weight: 700;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 h4 {
-    /*font-size: 18px;*/
-    font-size: 60px;
+    font-size: 18px;
+    /*font-size: 20px;*/
     margin-bottom: 18px;
 }
 
@@ -87,6 +91,7 @@ body {
     background: var(--grey-bckgnd);
     border-radius: 4px;
     /*TODO box-shadow: ;*/
+    box-shadow: var(--light-grey) 1px 1px 3px 0px;
     display: flex;
     flex-direction: column;
     height: 40px;
@@ -165,6 +170,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 15px;
+    margin-bottom: 30px;
     justify-content: space-between;
 }
 
@@ -173,6 +179,11 @@ body {
         height: 3px;
     }
 
+
+/*------Main------*/
+main {
+    text-align: center;
+}
 
 /*----------10----------*/
 /*--------8--------*/
