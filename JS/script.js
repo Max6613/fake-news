@@ -3,7 +3,7 @@ $("input[name=burger-check]").change(function () {
     if ($(this).is(":checked")){
         console.log("dis block");
         // $("#main-menu").css("display", "block");
-        $("#main-menu").css("flex-basis", "250px");
+        $("#main-menu").css("flex-basis", "450px");
     } else {
         console.log("dis none");
         // $("#main-menu").css("display", "none");

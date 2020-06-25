@@ -63,8 +63,8 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <header>
+    <div>
+        <header class="container">
             <!--checkbox + bouton burger-->
             <input type="checkbox" name="burger-check" id="burger-cmd">
             <label for="burger-cmd" id="burger-btn">
@@ -89,7 +89,7 @@
         </header>
 
         <main>
-            <section class="latest-news">
+            <section class="latest-news container">
                 <h2>LES DERNIÈRES <strong>FAKE NEWS</strong>!</h2>
                 
                 <div class="fake-news">
@@ -118,20 +118,23 @@
                     </p>
                 </div>
 
-                <!--TODO fontawesome-->
-                <button>J'EN VEUX ENCORE !</button>
+                <button>
+                    <!--TODO fontawesome-->
+                    <a href="#">J'EN VEUX ENCORE !</a>
+                </button>
             </section>
 
             <aside class="citation">
+                <!--TODO taille de l'img-->
                 <IMG src="Img/banner.jpg" align="banniere">
-                <p>
+                <div class="center">
                     "ON PEUT TROMPER UNE FOIS MILLE PERSONNES, MAIS ON NE PEUT PAS TROMPER MILLE FOIS UNE PERSONNE;"
                     - ÉMILE
-                </p>
+                </div>
             </aside>
         </main>
 
-        <footer>
+        <footer class="container">
 
         </footer>
     </div>

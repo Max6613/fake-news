@@ -29,15 +29,30 @@ a {
         color: var(--hover-orange);
     }
 
+button {
+    background: var(--orange);
+    border: var(--red);
+    border-radius: 4px;
+    color: var(--light-bckgnd);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 100%;
+}
+
+    button:active, button:hover{
+        background: var(--hover-orange);
+    }
+
 /* ----------titres----------*/
 /*TODO text shadow*/
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h1 {
     font-family: var(--font-title);
-    font-size: 36px;
+    font-size: 45px;
     /*font-size: 78px;*/
     font-weight: 700;
     letter-spacing: 10px;
@@ -46,7 +61,7 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 25px;
     /*font-size: 70px;*/
     letter-spacing: 4px;
     margin-bottom: 25px;
@@ -55,20 +70,20 @@ h2 {
 h3 {
     font-size: 22px;
     /*font-size: 35px;*/
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-h4 {
-    font-size: 18px;
-    /*font-size: 20px;*/
-    margin-bottom: 18px;
-}
+/*h4 {*/
+    /*font-size: 18px;*/
+    /*!*font-size: 20px;*!*/
+    /*margin-bottom: 18px;*/
+/*}*/
 
-h5, h6 {
-    margin-bottom: 15px;
-}
+/*h5, h6 {*/
+    /*margin-bottom: 15px;*/
+/*}*/
 
 /*----------Framework----------*/
 /*--------Layout--------*/
@@ -143,14 +158,34 @@ body {
 #main-menu {
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
-    /*position: absolute;*/
-    /*position: fixed;*/
+    display: flex;
     flex-basis: 0;
     height: 100vh;
     overflow-x: hidden;
-    /*width: 250px;*/
-    /*z-index: 1;*/
 }
+
+#main-menu > ul {
+    flex-grow: 1;
+}
+
+#main-menu li {
+    border-bottom: 1px solid var(--dark-grey);
+    padding-left: 15px;
+}
+
+    /* permet d'activer le hover sur les liens lorsque la souris
+    est dans la case, et garde le parent actif */
+    #main-menu li:hover > a {
+        color: var(--hover-orange);
+    }
+
+#main-menu li > a {
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
 
 /*------Titre + phrase------*/
 .title {
@@ -183,6 +218,55 @@ body {
 /*------Main------*/
 main {
     text-align: center;
+}
+
+/*----Latest news----*/
+.latest-news {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+}
+
+.fake-news {
+    margin-bottom: 30px;
+}
+
+.fake-news img {
+    background: var(--grey-bckgnd);
+    margin-bottom: 20px;
+    padding: 7px;
+}
+
+.fake-news p > a {
+    /*text-decoration: underline;*/
+    border-bottom: 1px solid var(--grey-bckgnd);
+}
+
+    .fake-news p > a:link{
+        /*color: var(--grey-bckgnd);*/
+    }
+
+
+/*----Citations----*/
+.citation {
+    position: relative;
+    text-align: center;
+}
+
+    .citation .center {
+        color: var(--light-bckgnd);
+        font-size: 22px;
+        left: 50%;
+        letter-spacing: 4px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);/
+    }
+
+.citation img {
+    max-width: 100%;
+    height: auto;
 }
 
 /*----------10----------*/
