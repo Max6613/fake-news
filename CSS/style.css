@@ -18,6 +18,7 @@ body {
     background: var(--light-bckgnd);
     color: var(--mid-grey);
     font-family: var(--font-text), 'sans-serif';
+    font-size: 18px;
     line-height: 1.4;
 }
 
@@ -37,7 +38,7 @@ button {
     color: var(--light-bckgnd);
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     padding: 10px 0;
     width: 100%;
 }
@@ -100,10 +101,6 @@ h4 {
     padding-left: 15px;
     padding-right: 15px;
     /*TODO déplacer la page lors de l'ouverture du menu'*/
-}
-
-.container p {
-    text-align: center;
 }
 
 /*--------Page--------*/
@@ -233,6 +230,7 @@ body {
     display: flex;
     height: 13px;
     flex-direction: column;
+    margin-bottom: 5px;
     padding: 5px 0;
 }
 
@@ -249,15 +247,23 @@ main {
 }
 
 p {
+    /* display permet de centrer le texte si moins d'une
+       ligne puisque les autres p sont en justify */
+    display: inline-block;
+    line-height: 1.4;
     margin-bottom: 30px;
     text-align: justify;
+}
+
+div, section, aside {
+    margin-bottom: 30px;
 }
 
 /*----Latest news----*/
 .latest-news {
     padding-left: 25px;
     padding-right: 25px;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 
 .fake-news {
@@ -285,9 +291,11 @@ p {
         font-size: 22px;
         left: 50%;
         letter-spacing: 4px;
+        margin-bottom: 0;
         overflow: hidden;
         position: absolute;
         top: 50%;
+        width: 80%;
         transform: translate(-50%, -50%);/
     }
 
@@ -313,6 +321,18 @@ p {
     color: var(--light-bckgnd);
     display: inline-block;
     padding: 3px 10px;
+}
+
+
+
+/*----Random news----*/
+
+.random-news p > img {
+    background: var(--grey-bckgnd);
+    float: left;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    padding: 7px;
 }
 
 
