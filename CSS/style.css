@@ -29,6 +29,7 @@ a {
         color: var(--hover-orange);
     }
 
+    /* les boutons s'adapte à la taille de leurs conteneurs */
 button {
     background: var(--orange);
     border: var(--red);
@@ -36,6 +37,7 @@ button {
     color: var(--light-bckgnd);
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 30px;
     padding: 10px 0;
     width: 100%;
 }
@@ -44,12 +46,16 @@ button {
         background: var(--hover-orange);
     }
 
+    button > a:hover, button > a:active {
+        color: var(--light-bckgnd);
+    }
+
 /* ----------titres----------*/
-/*TODO text shadow*/
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
+/*TODO text shadow*/
 h1 {
     font-family: var(--font-title);
     font-size: 45px;
@@ -63,8 +69,9 @@ h1 {
 h2 {
     font-size: 25px;
     /*font-size: 70px;*/
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 h3 {
@@ -75,12 +82,12 @@ h3 {
     margin-bottom: 20px;
 }
 
-/*h4 {*/
-    /*font-size: 18px;*/
-    /*!*font-size: 20px;*!*/
-    /*margin-bottom: 18px;*/
-/*}*/
-
+h4 {
+    font-size: 18px;
+    /*font-size: 20px;*/
+    margin-bottom: 18px;
+}
+/*TODO del*/
 /*h5, h6 {*/
     /*margin-bottom: 15px;*/
 /*}*/
@@ -88,9 +95,15 @@ h3 {
 /*----------Framework----------*/
 /*--------Layout--------*/
 .container {
+    /* marges gauche et droite sur toutes la page
+       sauf menu nav et btn burger*/
     padding-left: 15px;
     padding-right: 15px;
     /*TODO déplacer la page lors de l'ouverture du menu'*/
+}
+
+.container p {
+    text-align: center;
 }
 
 /*--------Page--------*/
@@ -135,7 +148,7 @@ body {
     background: var(--grey-bckgnd);
 }
 
-/*rotation des span 1 et 3 et masquage span 2*/
+/*rotation/deplacement des span 1 et 3 et masquage span 2*/
 #burger-cmd:checked + [for="burger-cmd"] span:nth-child(1){
     transform:  translateX(0px) translateY(7px) rotate(-45deg);
 }
@@ -148,13 +161,15 @@ body {
     transform:  translateX(0px) translateY(-7px) rotate(45deg);
 }
 
-
 #burger-cmd {
     /*masquer la checkbox*/
     display: none;
 }
 
 /*----Menu nav----*/
+    /* Conteneur nav taille 0 et contenu maqué,
+       affiché via JS*/
+/*TODO garder/supprimer flex. Separation item*/
 #main-menu {
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
@@ -201,23 +216,41 @@ body {
 }
 
 /*------Séparateurs------*/
-.separator {
+.separator-double {
     display: flex;
     flex-direction: column;
     height: 15px;
-    margin-bottom: 30px;
     justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+    .separator-double span{
+        background: var(--grey-bckgnd);
+        height: 3px;
+    }
+
+.separator {
+    display: flex;
+    height: 13px;
+    flex-direction: column;
+    padding: 5px 0;
 }
 
     .separator span{
         background: var(--grey-bckgnd);
-        height: 3px;
+        flex-basis: 3px;
     }
+
 
 
 /*------Main------*/
 main {
     text-align: center;
+}
+
+p {
+    margin-bottom: 30px;
+    text-align: justify;
 }
 
 /*----Latest news----*/
@@ -233,19 +266,13 @@ main {
 
 .fake-news img {
     background: var(--grey-bckgnd);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 7px;
 }
 
 .fake-news p > a {
-    /*text-decoration: underline;*/
     border-bottom: 1px solid var(--grey-bckgnd);
 }
-
-    .fake-news p > a:link{
-        /*color: var(--grey-bckgnd);*/
-    }
-
 
 /*----Citations----*/
 .citation {
@@ -268,6 +295,26 @@ main {
     max-width: 100%;
     height: auto;
 }
+
+/*----Articles----*/
+
+
+.articles img {
+    background: var(--grey-bckgnd);
+    height: auto;
+    max-width: 100%;
+    padding: 7px;
+}
+
+/*----Posts----*/
+.posts .date {
+    background: var(--light-grey);
+    border-radius: 4px;
+    color: var(--light-bckgnd);
+    display: inline-block;
+    padding: 3px 10px;
+}
+
 
 /*----------10----------*/
 /*--------8--------*/
