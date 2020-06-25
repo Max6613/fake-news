@@ -2,11 +2,9 @@
 $("input[name=burger-check]").change(function () {
     if ($(this).is(":checked")){
         console.log("dis block");
-        // $("#main-menu").css("display", "block");
-        $("#main-menu").css("flex-basis", "450px");
+        $("#main-menu").css("flex-basis", "300px");
     } else {
         console.log("dis none");
-        // $("#main-menu").css("display", "none");
         $("#main-menu").css("flex-basis", "0");
     }
 });

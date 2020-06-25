@@ -98,7 +98,14 @@ h3 {
 }
 
 .wrapper {
+    /* permet de fixer la taille minimum,
+       et empecher la réduction lors de la
+       sortie du menu */
+    flex-shrink: 0;
+    flex-basis: 100%;
+    /* annule le margin-b general des div */
     margin-bottom: 0;
+    overflow-x: hidden;
 }
 
 /*--------Page--------*/
@@ -170,17 +177,20 @@ body {
     color: var(--light-bckgnd);
     display: flex;
     flex-basis: 0;
+    flex-shrink: 0;
     height: 100vh;
     overflow-x: hidden;
+    text-align: left;
 }
 
 #main-menu > ul {
+    /*TODO del si inutil*/
     flex-grow: 1;
 }
 
 #main-menu li {
     border-bottom: 1px solid var(--dark-grey);
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
     /* permet d'activer le hover sur les liens lorsque la souris
