@@ -12,63 +12,89 @@ $("input[name=burger-check]").change(function () {
     }
 });
 
-//_____________________________________________
-// //création nouvelles regex
-// jQuery.validator.addMethod(
-//     "regexName",
-//     function (value, element, regexp) {
-//         if (regexp.constructor != RegExp){
-//             regexp = new RegExp(regexp);
-//         } else if (regexp.global){
-//             regexp.lastIndex = 0;
-//             return this.optional(element) || regexp.test(value);
-//         }
-//     }, "Ne correspond pas à un nom"
-// );
-//
-// jQuery.extend(jQuery.validator.messages, {
-//    required: "",
-//    email: "",
-//     maxlength: "",
-//
-// });
 
-//Affichage de la modal de réussite
-function buildModal(){
 
+//____________Form contact + modal____________
+//Supprime les message d'erreur au focus
+function delLabel(name) {
+    $("label[for=" + name).remove();
 }
 
-function errorMess(inputs){
+$("input[name=name]").focus(function () {
+    delLabel(this.getAttribute("name"));
+});
+
+$("input[name=email]").focus(function () {
+    delLabel(this.getAttribute("name"));
+});
+
+$("input[name=mess]").focus(function () {
+    delLabel(this.getAttribute("name"));
+});
+
+
+//Affiche la modale de réussite
+function buildModal(){
+    $('body').append("<div class='modal'><p>On vous avait prévenu qu'il allait faire " +
+        "tout noir...<br>Votre message en à profité pour s'enfuir jusqu'à chez nous!</p>" +
+        "<button onclick='closeModal()'><i class='fas fa-check'></i> J'AI PEUR DU NOIR :'(</button></div>" +
+        "<div class='layer'></div>")
+}
+
+
+//Affiche messages d'erreurs
+function errorMess(fieldName){
+    //Affichage message d'erreur
+    let mess = "";
+
+    switch (fieldName){
+        case "name":
+            mess = "Les lettres anonymes c'est mal !";
+            break;
+        case "email":
+            mess = "Et comment on fait pour vous spammer ?";
+            break;
+        case "mess":
+            mess = "Non mais allô quoi, tu nous écris et tu nous écris rien ?";
+            break;
+        case "":
+            return null;
+    }
+    $("#" + fieldName).after("<label class='error' for='" + fieldName + "'>" + mess + "</label>")
+}
+
+
+//Efface le contenu des champs en erreur
+function delErrorField(inputs, error = true){
     if (inputs.length > 0){
-        console.log("erreur");
-        let error = true;
-        //Effacage champs invalides
         for (let i = 0; i < inputs.length; i++){
-            $("#"+inputs[i]).val("");
+            //Effacage des champs invalide
+            $("#" + inputs[i]).val("");
+
+            if (error){
+                /* affiche les mess d'erreurs uniquement lors
+                   de l'appel via la fonction de verif */
+                errorMess(inputs[i]);
+            }
         }
     } else{
-        console.log("pas d'erreur");
+        console.log("pas d'erreur");//TODO del
         buildModal();
+        //Rappel de la fonction pour effacer les champs
+        delErrorField(["name", "email", "mess"], false);
     }
-    console.log(inputs);
 }
 
+
+//Vérifie la validité des entrées
 function formVerif(){
     let inputs = {"name": $("#name"), "email": $("#email"), "mess": $("#mess")};
     let errors = [];
 
     let nameRegex = /^[a-zA-Z-']+$/;
+    //TODO améliorer/choisir regex email
     // let emailRegex = new RegExp(/^([a-zA-Z0-9_.\-+])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/);
     let emailRegex = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+.[a-z]{2,6}$/);
-
-    // if (inputs["name"].val() !== "" && nameRegex.test(inputs["name"].val()) &&
-    //     inputs["email"].val() !== "" && emailRegex.test(inputs["email"].val()) &&
-    //     inputs["mess"].val() !== ""){
-    //     //valide
-    //     console.log("champs valides");
-    // } else {
-    //     console.log("champs invalides");
-    // }
 
     for (let key in inputs){
         switch (key){
@@ -92,38 +118,13 @@ function formVerif(){
                 break;
         }
     }
-    errorMess(errors);
+    delErrorField(errors);
+}
 
 
-
-    //
-    // let nameRegex = /^[a-zA-Z-']+$/;
-    // console.log(nameRegex.test("maxime")); //ok
-    // console.log(nameRegex.test("MaximeFOntana"));
-    //
-    // let emailRegex = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+.[a-z]{2,6}$/);
-    // console.log(emailRegex.test("uneadresse@gmail.com"));
-
-
-    // /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/
-    // /^[a-zA-Z-']+$/
-
-    // /^[a-zA-Z\-]+$/
-
-    // $("#contact").validate({
-    //     rules: {
-    //         "name":{
-    //             "required": true,
-    //             "regexName": /^[a-zA-Z\-]+$/
-    //         },
-    //         "email":{
-    //             "required": true,
-    //             "email": true,
-    //             "maxlength": 255
-    //         },
-    //         "mess":{
-    //             "required": true,
-    //         }
-    //     }
-    // });
+//Retire la modal du html
+function closeModal() {
+    console.log("closeModal");
+    $(".modal").remove();
+    $(".layer").remove();
 }
