@@ -28,7 +28,7 @@ $("input[name=email]").focus(function () {
     delLabel(this.getAttribute("name"));
 });
 
-$("input[name=mess]").focus(function () {
+$("textarea[name=mess]").focus(function () {
     delLabel(this.getAttribute("name"));
 });
 
