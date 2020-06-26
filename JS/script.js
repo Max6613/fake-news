@@ -33,11 +33,22 @@ $("input[name=burger-check]").change(function () {
 //
 // });
 
-function buildModal(inputs){
+//Affichage de la modal de réussite
+function buildModal(){
+
+}
+
+function errorMess(inputs){
     if (inputs.length > 0){
         console.log("erreur");
+        let error = true;
+        //Effacage champs invalides
+        for (let i = 0; i < inputs.length; i++){
+            $("#"+inputs[i]).val("");
+        }
     } else{
         console.log("pas d'erreur");
+        buildModal();
     }
     console.log(inputs);
 }
@@ -62,13 +73,13 @@ function formVerif(){
     for (let key in inputs){
         switch (key){
             case "name":
-                if (inputs[key].val() === "" && !nameRegex.test(inputs[key].val())){
+                if (inputs[key].val() === "" || !nameRegex.test(inputs[key].val())){
                     //Nom invalide
                     errors.push(key);
                 }
                 break;
             case "email":
-                if (inputs["email"].val() === "" && !emailRegex.test(inputs["email"].val())){
+                if (inputs["email"].val() === "" || !emailRegex.test(inputs["email"].val())){
                     //mail invalide
                     errors.push(key);
                 }
@@ -81,7 +92,7 @@ function formVerif(){
                 break;
         }
     }
-    buildModal(errors);
+    errorMess(errors);
 
 
 
