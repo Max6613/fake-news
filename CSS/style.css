@@ -55,6 +55,11 @@ button {
         color: var(--light-bckgnd);
     }
 
+img {
+    /*max-width: 80%;*/
+    /*height: auto;*/
+}
+
 /* ----------titres----------*/
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
@@ -109,6 +114,11 @@ h3 {
 }
 
 /*--------Page--------*/
+/*------Icones fontawesome------*/
+far, fas, fab {
+    /*TODO*/
+}
+
 
 /*------Body------*/
 body {
@@ -206,7 +216,10 @@ body {
     padding-top: 10px;
 }
 
-
+.menu-icon {
+    /* cache les icones du menu en mobile*/
+    display: none !important;
+}
 
 /*------Titre + phrase------*/
 .title {
@@ -316,8 +329,8 @@ div, section, aside {
 
 .articles img {
     background: var(--grey-bckgnd);
-    height: auto;
-    max-width: 100%;
+    /*height: auto;*/
+    /*max-width: 100%;*/
     padding: 7px;
 }
 
@@ -333,13 +346,16 @@ div, section, aside {
 
 
 /*----Random news----*/
-
 .random-news p > img {
     background: var(--grey-bckgnd);
     float: left;
     margin-bottom: 30px;
     margin-right: 15px;
     padding: 7px;
+}
+
+.random-news > .separator {
+    margin-bottom: 30px;
 }
 
 /*------Footer------*/
@@ -426,6 +442,11 @@ address {
     .footer-bottom a {
         border-bottom: 1px solid var(--lighter-grey);
     }
+
+/*----Icones----*/
+.footer-icon {
+    /*TODO icones arrondies*/
+}
 
 /*------Modal------*/
 .modal {

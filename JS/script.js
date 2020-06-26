@@ -3,7 +3,6 @@ $("input[name=burger-check]").change(function () {
     if ($(this).is(":checked")){
         console.log("dis block");
         $("#main-menu").css("flex-basis", "300px");
-        //TODO empecher scroll vertical (JS?) et horizontal (CSS?)
         $("body").css("overflow", "hidden");
     } else {
         console.log("dis none");
@@ -78,7 +77,6 @@ function delErrorField(inputs, error = true){
             }
         }
     } else{
-        console.log("pas d'erreur");//TODO del
         buildModal();
         //Rappel de la fonction pour effacer les champs
         delErrorField(["name", "email", "mess"], false);
@@ -124,7 +122,6 @@ function formVerif(){
 
 //Retire la modal du html
 function closeModal() {
-    console.log("closeModal");
     $(".modal").remove();
     $(".layer").remove();
 }
