@@ -21,7 +21,7 @@ body {
     background: var(--light-bckgnd);
     color: var(--mid-grey);
     font-family: var(--font-text), 'sans-serif';
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.4;
     text-align: center;
 }
@@ -40,11 +40,12 @@ button {
     border: var(--red);
     border-radius: 4px;
     color: var(--light-bckgnd);
-    font-size: 18px;
+    /*font-size: 18px;*/
     font-weight: 600;
     /*margin-bottom: 30px;*/
     padding: 10px 0;
     width: 100%;
+    /*TODO media query*/
 }
 
     button:active, button:hover{
@@ -99,7 +100,7 @@ h3 {
        sauf menu nav et btn burger*/
     padding-left: 15px;
     padding-right: 15px;
-    /*TODO déplacer la page lors de l'ouverture du menu'*/
+    /*TODO media query'*/
 }
 
 .wrapper {
@@ -182,7 +183,7 @@ body {
 /*----Menu nav----*/
     /* Conteneur nav taille 0 et contenu maqué,
        affiché via JS*/
-/*TODO garder/supprimer flex. Separation item*/
+/*TODO garder/supprimer flex, Separation item*/
 #main-menu {
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
@@ -488,3 +489,104 @@ address {
 
 /*TODO del fweight300 inutiles*/
 /*TODO curseur click sur bouton et lien en version pc*/
+
+/*--------Media queries--------*/
+/*------mode tablette------*/
+@media (min-width: 768px){
+    button {
+        width: auto;
+        padding: 10px 30px;
+    }
+
+    .container {
+        /*TODO*/
+        /*padding-left: 50px;*/
+        /*padding-right: 50px;*/
+        padding-left: 8%;
+        padding-right: 8%;
+
+    }
+
+    /*----Fake news----*/
+    .flex-fakenews {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /*text-align: center;*/
+    }
+
+    .fake-news {
+        flex-basis: 30%;
+    }
+
+    .fake-news img {
+        width: 100%;
+    }
+
+    /*----Articles + posts + random----*/
+    .flex-articles {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .articles {
+        flex-basis: 60%;
+
+    }
+
+    .articles img {
+        height: auto;
+        width: 100%;
+    }
+
+    .flex-posts {
+        flex-basis: 30%;
+        padding-top: 70px;
+    }
+
+    /*----Footer----*/
+    footer {
+
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+        .footer-top > p:first-child {
+            padding-right: 10px;
+        }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    /*TODO padding/margin separator*/
+    /*TODO footer:
+        footer display flex column ???
+        footer-contacts display flex row
+        form: div input, flex row
+           */
+}
+
+/*------mode tablette------*/
+@media (min-width: 992px){
+    /*
+    TODO:
+    masquer bouton burger
+
+    */
+}
