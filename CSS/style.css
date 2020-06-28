@@ -116,7 +116,7 @@ h3 {
 
 /*--------Page--------*/
 /*------Icones fontawesome------*/
-far, fas, fab {
+.far, .fas, .fab {
     /*TODO*/
 }
 
@@ -366,7 +366,7 @@ footer {
     padding-top: 30px;
 }
 
-footer  p {
+footer  > p {
     margin-bottom: 15px;
 }
 
@@ -384,8 +384,18 @@ footer  p {
 #contact {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    margin-bottom: 30px;
+    /*padding: 15px;*/
 }
+
+    #contact .inputs {
+        margin-bottom: 0;
+    }
+
+    #contact input {
+        display: block;
+        width: 100%;
+    }
 
     #contact input, #contact textarea {
         border: none;
@@ -416,9 +426,18 @@ footer  p {
 
 
 /*----Liens de contact----*/
+.contact-div {
+    text-align: left;
+    /*padding: 15px;*/
+}
+
+ .contact-div p {
+     margin-bottom: 15px;
+ }
+
 address {
     text-align: left;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
     margin-bottom: 30px;
 }
 
@@ -447,6 +466,7 @@ address {
 /*----Icones----*/
 .footer-icon {
     /*TODO icones arrondies*/
+
 }
 
 /*------Modal------*/
@@ -492,6 +512,14 @@ address {
 
 /*--------Media queries--------*/
 /*------mode tablette------*/
+@media (max-width: 495px){
+    /* agrandissement de l'image sous la citation pour pouvoir
+       contenir le texte */
+    .citation img {
+        max-width: 200%;
+    }
+
+}
 @media (min-width: 768px){
     button {
         width: auto;
@@ -519,8 +547,13 @@ address {
         flex-basis: 30%;
     }
 
-    .fake-news img {
-        width: 100%;
+        .fake-news img {
+            width: 100%;
+        }
+
+    /*----Citation----*/
+    .citation .center {
+
     }
 
     /*----Articles + posts + random----*/
@@ -534,7 +567,6 @@ address {
 
     .articles {
         flex-basis: 60%;
-
     }
 
     .articles img {
@@ -550,6 +582,7 @@ address {
     /*----Footer----*/
     footer {
 
+
     }
 
     .footer-top {
@@ -558,6 +591,7 @@ address {
         justify-content: center;
     }
 
+        /* Espace entre les p */
         .footer-top > p:first-child {
             padding-right: 10px;
         }
@@ -565,21 +599,68 @@ address {
     .footer-contacts {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
+
+    /* passage du formulaire en flex pour pouvoir modifier la taille
+       du bouton qui sinon prend la largeur du conteneur*/
+    #contact {
+        display: flex;
+        flex-basis: 48%;
+        flex-direction: column;
+    }
+
+        #contact button {
+            align-self: flex-start;
+        }
 
 
     .inputs {
         display: flex;
         flex-direction: row;
-
+        justify-content: space-between;
+        margin-bottom: 0;
     }
 
+        .inputs input:first-child {
+            margin-right: 15px;
+        }
+
+
+    .contact-div {
+        flex-basis: 48%;
+    }
+
+        .contact-div > p {
+            padding-left: 15px;
+        }
+
+    .contact-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+        .contact-links > ul {
+            flex-basis: 48%;
+        }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+        .footer-bottom p {
+            padding: 0 15px;
+        }
+
+        .footer-bottom p:first-child {
+            border-right: 1px solid var(--light-grey);
+        }
+
     /*TODO padding/margin separator*/
-    /*TODO footer:
-        footer display flex column ???
-        footer-contacts display flex row
-        form: div input, flex row
-           */
 }
 
 /*------mode tablette------*/
@@ -590,3 +671,5 @@ address {
 
     */
 }
+
+/*TODO boxshadow button*/
