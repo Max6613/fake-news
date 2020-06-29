@@ -123,3 +123,5 @@ function closeModal() {
     $(".modal").remove();
     $(".layer").remove();
 }
+
+//TODO supprimer les messages d'erreurs lors du rappel
