@@ -20,8 +20,11 @@
 body {
     background: var(--light-bckgnd);
     color: var(--mid-grey);
+    /*pour gestion menu*/
+    display: flex;
     font-family: var(--font-text), 'sans-serif';
     font-size: 16px;
+    font-weight: 300;
     line-height: 1.4;
     text-align: center;
 }
@@ -123,13 +126,12 @@ h3 {
 
 /*------Body------*/
 body {
-    display: flex;
-    font-weight: 300;
+
 }
 
 /*------Menu------*/
 /*----Btn burger----*/
-[for="burger-cmd"] {
+#burger-btn {
     background: var(--grey-bckgnd);
     border-radius: 4px;
     /*TODO box-shadow: ;*/
@@ -146,32 +148,32 @@ body {
     width: 60px;
 }
 
-[for="burger-cmd"] span{
+#burger-btn span{
     background: var(--mid-grey);
     flex-basis: 2px;
     opacity: 1;
     transition: opacity 300ms, background 500ms, transform 600ms;
 }
 
-#burger-cmd:checked + [for="burger-cmd"] {
+#burger-cmd:checked + #burger-btn {
     /*Lorsque burger est coché le bouton change d'aspect'*/
     background: var(--mid-grey);
 }
 
-#burger-cmd:checked + [for="burger-cmd"] span{
+#burger-cmd:checked + #burger-btn span{
     background: var(--grey-bckgnd);
 }
 
 /*rotation/deplacement des span 1 et 3 et masquage span 2*/
-#burger-cmd:checked + [for="burger-cmd"] span:nth-child(1){
+#burger-cmd:checked + #burger-btn span:nth-child(1){
     transform:  translateX(0px) translateY(7px) rotate(-45deg);
 }
 
-#burger-cmd:checked + [for="burger-cmd"] span:nth-child(2){
+#burger-cmd:checked + #burger-btn span:nth-child(2){
     opacity: 0;
 }
 
-#burger-cmd:checked + [for="burger-cmd"] span:nth-child(3){
+#burger-cmd:checked + #burger-btn span:nth-child(3){
     transform:  translateX(0px) translateY(-7px) rotate(45deg);
 }
 
@@ -183,16 +185,16 @@ body {
 /*----Menu nav----*/
     /* Conteneur nav taille 0 et contenu maqué,
        affiché via JS*/
-/*TODO garder/supprimer flex, Separation item*/
+/*TODO Separation item*/
 #main-menu {
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
-    display: flex;
     flex-basis: 0;
     flex-shrink: 0;
     height: 100vh;
     overflow-x: hidden;
     text-align: left;
+    text-transform: uppercase;
 }
 
 #main-menu > ul {
@@ -205,7 +207,7 @@ body {
     padding-left: 20px;
 }
 
-    /* permet d'activer le hover sur les liens lorsque la souris
+    /* active le hover sur les liens lorsque la souris
     est dans la case, et garde le parent actif */
     #main-menu li:hover > a {
         color: var(--hover-orange);
@@ -262,10 +264,7 @@ body {
         flex-basis: 3px;
     }
 
-
-
 /*------Main------*/
-
 main p {
     /* display permet de centrer le texte si moins d'une
        ligne puisque les autres p sont en justify */
@@ -511,7 +510,7 @@ address {
 /*TODO curseur click sur bouton et lien en version pc*/
 
 /*--------Media queries--------*/
-/*------mode tablette------*/
+/*------mode petit ecran------*/
 @media (max-width: 495px){
     /* agrandissement de l'image sous la citation pour pouvoir
        contenir le texte */
@@ -520,6 +519,8 @@ address {
     }
 
 }
+
+/*------mode tablette------*/
 @media (min-width: 768px){
     button {
         width: auto;
@@ -581,8 +582,8 @@ address {
 
     /*----Footer----*/
     footer {
-
-
+        padding-bottom: 100px ;
+        padding-top: 100px ;
     }
 
     .footer-top {
@@ -600,6 +601,7 @@ address {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 100px;
         text-align: left;
     }
 
@@ -616,16 +618,16 @@ address {
         }
 
 
-    .inputs {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 0;
-    }
-
-        .inputs input:first-child {
-            margin-right: 15px;
+        #contact .inputs {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 0;
         }
+
+            #contact .inputs input:first-child {
+                margin-right: 15px;
+            }
 
 
     .contact-div {
@@ -663,13 +665,112 @@ address {
     /*TODO padding/margin separator*/
 }
 
-/*------mode tablette------*/
+/*------mode bureau------*/
 @media (min-width: 992px){
     /*
     TODO:
-    masquer bouton burger
 
+    container padding
     */
+    body {
+        flex-direction: column;
+    }
+
+    #burger-btn {
+        display: none;
+    }
+
+    #main-menu {
+        background: inherit;
+        color: inherit;
+        flex-basis: inherit;
+        flex-shrink: inherit;
+        height: inherit;
+        font-weight: 400;
+        margin-bottom: 100px;
+        overflow-x: inherit;
+        text-align: inherit;
+        width: 100%;
+    }
+        #main-menu .menu-icon {
+            /* affiche les icones du menu */
+            display: inherit !important;
+        }
+
+        #main-menu > ul {
+            display: flex;
+            justify-content: center;
+            text-align: left;
+        }
+
+            /* uniquement premier menu visible*/
+            #main-menu > ul > li {
+                padding: 10px 20px;
+            }
+
+            /* Flèche en haut des sous menu de 1er niveau
+           ::after triangle blanc
+           ::before triangle noir, en dessous du blanc et décalé
+                qui donne l'impression d'une bordure */
+            #main-menu > ul > li > ul:after,
+            #main-menu > ul > li > ul:before {
+                border-bottom: 10px solid var(--light-bckgnd); /* bord inferieur meme couleur que contenu */
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                content: ''; /* contenu vide, sinon n'apparait pas */
+                left: 10%; /* position par rapport à la gauche du ul */
+                position: absolute;
+                /* on réduit le bord haut de 10px, sur un carré
+                   de 10px de coté, le bord haut disparait et
+                   donne un triangle */
+                top: -10px; /* position par rapport au haut du ul */
+            }
+
+            #main-menu > ul > li > ul:before {
+                /* carré de 12px de coté, couleur hérité de la fonction
+                   border du ul */
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+                border-bottom: 12px solid;
+                border-bottom-color: inherit; /* ne fonctionne pas dans la fonction border-bottom */
+                margin-left: -2px; /* décalage de 2px par rapport au triangle blanc */
+                top: -12px;
+            }
+
+
+        #main-menu li {
+            /* supprime les traits de séparations sous tous les li */
+            border-bottom: none;
+            padding: 0 20px;
+        }
+
+            /* Masque les sous menus */
+            #main-menu li ul {
+                display: none;
+                position: absolute;
+                text-transform: initial;
+                z-index: 10;
+            }
+
+                #main-menu li ul li ul {
+                    left: 100%;
+                    margin-top: -42px;
+                }
+
+            /* affiche le sous menu lorsque l'element parent est ciblé */
+            #main-menu li:hover > ul {
+                background: var(--light-bckgnd);
+                border: 1px solid var(--lighter-grey);
+                border-radius: 4px;
+                display: block;
+
+            }
+
+
+        #main-menu a {
+            white-space: nowrap;
+        }
 }
+
 
 /*TODO boxshadow button*/
