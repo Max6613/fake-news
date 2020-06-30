@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 
-/*TODO text shadow*/
 h1 {
     font-family: var(--font-title);
     font-size: 45px;
@@ -109,13 +108,8 @@ h3 {
     overflow-x: hidden;
 }
 
+
 /*--------Page--------*/
-/*------Icones fontawesome------*/
-.far, .fas, .fab {
-    /*TODO*/
-}
-
-
 /*------Menu------*/
 /*----Btn burger----*/
 #burger-btn {
@@ -376,7 +370,6 @@ footer {
         width: 100%;
     }
 
-    /*TODO textarea/ input placeholder*/
     #contact input, #contact textarea {
         border: none;
         border-radius: 4px;
@@ -439,7 +432,7 @@ address li {
 /*--Icones--*/
 .footer-icon {
     /*TODO icones arrondies*/
-
+    border-radius: ;
 }
 
 

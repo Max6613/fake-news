@@ -14,7 +14,6 @@ $("input[name=burger-check]").change(function () {
 //Supprime UN message d'erreur s'il existe
 function delLabel(name) {
     if ($("label[for=" + name).length){
-        console.log("azertyuio");
         $("label[for=" + name).remove();
     }
 }
