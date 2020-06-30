@@ -409,6 +409,10 @@ footer {
     top: -15px;
 }
 
+.div-errors {
+    margin-bottom: 0;
+}
+
 
 /*--Liens de contact--*/
 .contact-div {
@@ -468,6 +472,10 @@ address li {
         margin-bottom: 30px;
     }
 
+    .modal button {
+        align-self: flex-start;
+    }
+
 .layer {
     background: #000000;
     display: block;
@@ -503,8 +511,8 @@ address li {
     }
 }
 
+
 /*------mode tablette------*/
-/*TODO message erreur form*/
 @media (min-width: 768px){
     button {
         width: auto;
@@ -589,8 +597,12 @@ address li {
             justify-content: space-between;
         }
 
-            #contact .inputs input:first-child {
+            #contact .inputs .div-errors:first-child {
                 margin-right: 15px;
+            }
+
+            #contact .inputs .div-errors {
+                flex-basis: 50%;
             }
 
     .contact-div {
@@ -623,12 +635,19 @@ address li {
         .footer-bottom p:first-child {
             border-right: 1px solid var(--light-grey);
         }
+
+
+    /*----Modal----*/
+    .modal {
+        width: auto;
+    }
 }
+
 
 /*------mode bureau------*/
 @media (min-width: 992px){
     body {
-        flex-direction: column;
+        flex-direction: column; /* affiche le menu en haut de la page */
     }
 
     .container {
@@ -643,30 +662,28 @@ address li {
     #main-menu {
         background: inherit;
         color: inherit;
-        flex-basis: inherit;
-        flex-shrink: inherit;
         height: inherit;
         font-weight: 400;
         margin-bottom: 100px;
         overflow-x: inherit;
-        text-align: inherit;
-        width: 100%;
+        text-align: left;
     }
+
         #main-menu .menu-icon {
             /* affiche les icones du menu */
             display: inherit !important;
         }
 
+        #main-menu li > a {
+            border-bottom: 1px solid var(--lighter-grey);
+            white-space: nowrap;
+            padding: 10px 20px;
+        }
+
         #main-menu > ul {
             display: flex;
             justify-content: center;
-            text-align: left;
         }
-
-            /* uniquement premier menu visible*/
-            #main-menu > ul > li {
-                padding: 10px 20px;
-            }
 
             /* Flèche en haut des sous menu de 1er niveau
            ::after triangle blanc
@@ -697,45 +714,36 @@ address li {
                 top: -12px;
             }
 
+            #main-menu > ul > li > a {
+                /* supprime les traits de séparations sous les <a> de premier niveau*/
+                border-bottom: none;
+            }
 
-        #main-menu li {
-            /* supprime les traits de séparations sous tous les li */
-            border-bottom: none;
-            padding: 0 0;
+        /* Masque les sous menus */
+        #main-menu li ul {
+            display: none;
+            position: absolute;
+            text-transform: initial;
+            z-index: 10;
         }
 
-            /* Masque les sous menus */
-            #main-menu li ul {
-                display: none;
-                position: absolute;
-                text-transform: initial;
-                z-index: 10;
+            #main-menu li ul a,
+            #main-menu li ul li ul a {
+                padding-left: 20px; /* supprime l'indentation des sous menus en mobile */
             }
 
-                #main-menu li ul li ul {
-                    left: 100%;
-                    margin-top: -42px;
-                }
-
-             #main-menu li li {
-                 padding-left: 0;
-             }
-
-            /* affiche le sous menu lorsque l'element parent est ciblé */
-            #main-menu li:hover > ul {
-                background: var(--light-bckgnd);
-                border: 1px solid var(--lighter-grey);
-                border-radius: 4px;
-                display: block;
-
+            #main-menu li ul li ul {
+                left: 100%;
+                margin-top: -44px;
+                /* hauteur du parent + 1px du border bottom du <li> précédent le parent */
             }
 
 
-        #main-menu a {
-            white-space: nowrap;
-            padding: 10px 20px;
+        /* affiche le sous menu lorsque l'element parent est ciblé */
+        #main-menu li:hover > ul {
+            background: var(--light-bckgnd);
+            border: 1px solid var(--lighter-grey);
+            border-radius: 4px;
+            display: block;
         }
 }
-
-
-/*TODO boxshadow button*/

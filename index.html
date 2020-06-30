@@ -304,8 +304,12 @@
             <div class="footer-contacts">
                 <form id="contact" method="post">
                     <span class="inputs">
-                        <input type="text" name="name" id="name" placeholder="Nom">
-                        <input type="text" name="email" id="email" placeholder="Email">
+                        <div class="div-errors">
+                            <input type="text" name="name" id="name" placeholder="Nom">
+                        </div>
+                        <div class="div-errors">
+                            <input type="text" name="email" id="email" placeholder="Email">
+                        </div>
                     </span>
                     <textarea name="mess" id="mess" placeholder="Message"></textarea>
                     <button type="button" onclick="formVerif()"><i class="far fa-envelope"></i> IL VA FAIRE TOUT NOIR !</button>
