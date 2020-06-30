@@ -465,10 +465,6 @@ address li {
         margin-bottom: 30px;
     }
 
-    .modal button {
-        align-self: flex-start;
-    }
-
 .layer {
     background: #000000;
     display: block;

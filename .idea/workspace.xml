@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7447fd70-9433-4f69-9c82-85ff1c73a37b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JS/script.js" afterPath="$PROJECT_DIR$/JS/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/style.css" afterPath="$PROJECT_DIR$/CSS/style.css" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,22 +19,22 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/CSS/style.css">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="322">
-                    <caret line="256" column="36" lean-forward="false" selection-start-line="256" selection-start-column="36" selection-end-line="256" selection-end-column="36" />
+                  <state relative-caret-position="373">
+                    <caret line="465" column="5" lean-forward="false" selection-start-line="465" selection-start-column="5" selection-end-line="465" selection-end-column="5" />
                     <folding>
-                      <element signature="e#9363#9534#0" expanded="false" />
-                      <element signature="e#9536#9767#0" expanded="false" />
-                      <element signature="e#9800#12244#0" expanded="false" />
-                      <element signature="e#12275#15637#0" expanded="false" />
+                      <element signature="e#9304#9475#0" expanded="false" />
+                      <element signature="e#9477#9708#0" expanded="false" />
+                      <element signature="e#9741#12185#0" expanded="false" />
+                      <element signature="e#12216#15578#0" expanded="false" />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/JS/script.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="765">
@@ -174,9 +175,9 @@
         <option value="$PROJECT_DIR$/CSS/reset.css" />
         <option value="$PROJECT_DIR$/CSS/fontawesome-all.min.css" />
         <option value="$PROJECT_DIR$/../../../JavaScript/Exo/calendier + modal final/flexCal.js" />
-        <option value="$PROJECT_DIR$/CSS/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/JS/script.js" />
+        <option value="$PROJECT_DIR$/CSS/style.css" />
       </list>
     </option>
   </component>
@@ -274,12 +275,12 @@
       <workItem from="1593157813320" duration="24140000" />
       <workItem from="1593282861547" duration="10105000" />
       <workItem from="1593413103735" duration="2643000" />
-      <workItem from="1593416694733" duration="30436000" />
+      <workItem from="1593416694733" duration="31373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114950000" />
+    <option name="totallyTimeSpent" value="115887000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -292,7 +293,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1105" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2507177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28540066" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -472,10 +472,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9363#9534#0" expanded="false" />
-            <element signature="e#9536#9767#0" expanded="false" />
-            <element signature="e#9800#12244#0" expanded="false" />
-            <element signature="e#12275#15637#0" expanded="false" />
+            <element signature="e#9304#9475#0" expanded="false" />
+            <element signature="e#9477#9708#0" expanded="false" />
+            <element signature="e#9741#12185#0" expanded="false" />
+            <element signature="e#12216#15578#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -652,10 +652,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#9363#9534#0" expanded="false" />
-            <element signature="e#9536#9767#0" expanded="false" />
-            <element signature="e#9800#12244#0" expanded="false" />
-            <element signature="e#12275#15637#0" expanded="false" />
+            <element signature="e#9304#9475#0" expanded="false" />
+            <element signature="e#9477#9708#0" expanded="false" />
+            <element signature="e#9741#12185#0" expanded="false" />
+            <element signature="e#12216#15578#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -907,15 +907,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/style.css">
+    <entry file="file://$PROJECT_DIR$/JS/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="256" column="36" lean-forward="false" selection-start-line="256" selection-start-column="36" selection-end-line="256" selection-end-column="36" />
+        <state relative-caret-position="765">
+          <caret line="130" column="1" lean-forward="false" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
           <folding>
-            <element signature="e#9363#9534#0" expanded="false" />
-            <element signature="e#9536#9767#0" expanded="false" />
-            <element signature="e#9800#12244#0" expanded="false" />
-            <element signature="e#12275#15637#0" expanded="false" />
+            <element signature="n#!!block;n#delLabel#0" expanded="false" />
+            <element signature="n#!!block;n#buildModal#0" expanded="false" />
+            <element signature="n#!!block;n#errorMess#0" expanded="false" />
+            <element signature="n#!!block;n#delErrorField#0" expanded="false" />
+            <element signature="n#!!block;n#closeModal#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -962,16 +963,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JS/script.js">
+    <entry file="file://$PROJECT_DIR$/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="130" column="1" lean-forward="false" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+        <state relative-caret-position="373">
+          <caret line="465" column="5" lean-forward="false" selection-start-line="465" selection-start-column="5" selection-end-line="465" selection-end-column="5" />
           <folding>
-            <element signature="n#!!block;n#delLabel#0" expanded="false" />
-            <element signature="n#!!block;n#buildModal#0" expanded="false" />
-            <element signature="n#!!block;n#errorMess#0" expanded="false" />
-            <element signature="n#!!block;n#delErrorField#0" expanded="false" />
-            <element signature="n#!!block;n#closeModal#0" expanded="false" />
+            <element signature="e#9304#9475#0" expanded="false" />
+            <element signature="e#9477#9708#0" expanded="false" />
+            <element signature="e#9741#12185#0" expanded="false" />
+            <element signature="e#12216#15578#0" expanded="false" />
           </folding>
         </state>
       </provider>
