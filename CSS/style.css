@@ -168,13 +168,15 @@ h3 {
     /* <nav> taille 0 et contenu masqué, affiché via JS */
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
-    flex-basis: 0;
-    flex-shrink: 0;
     height: 100vh;
+    left: -234px;
     overflow-x: hidden;
+    position: absolute;
     text-align: left;
     text-transform: uppercase;
+    top: 0;
     transition: flex-basis 300ms;
+    /*width: 0;*/
 }
 
 
@@ -641,6 +643,7 @@ address li {
 @media (min-width: 992px){
     body {
         flex-direction: column; /* affiche le menu en haut de la page */
+        transform: translateX(0) !important; /* En cas de redimenssionnement menu ouvett */
     }
 
     .container {
@@ -657,10 +660,12 @@ address li {
         color: inherit;
         height: inherit;
         font-weight: 400;
+        left: inherit;
         margin-bottom: 100px;
         overflow-x: inherit;
+        position: inherit;
         text-align: left;
-
+        top: inherit;
     }
 
         #main-menu .menu-icon {
