@@ -89,10 +89,8 @@ function formVerif(){
     let inputs = {"name": $("#name"), "email": $("#email"), "mess": $("#mess")};
     let errors = [];
 
-    let nameRegex = /^[a-zA-Z-']+$/;
-    //TODO améliorer/choisir regex email
-    // let emailRegex = new RegExp(/^([a-zA-Z0-9_.\-+])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/);
-    let emailRegex = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+.[a-z]{2,6}$/);
+    let nameRegex = /^[a-zA-Z-'\s]+$/;
+    let emailRegex = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/);
 
     for (let key in inputs){
         //Suppression des messages d'erreurs existants
@@ -108,7 +106,7 @@ function formVerif(){
                 break;
             case "email":
                 //si email vide ou ne correspond pas à la regex
-                if (inputs["email"].val() === "" || !emailRegex.test(inputs["email"].val())){
+                if (inputs["email"].val() === "" || !emailRegex.test(inputs["email"].val().toLowerCase())){
                     //mail invalide
                     errors.push(key);
                 }
