@@ -164,6 +164,12 @@ h3 {
 
 
 /*----Menu nav----*/
+.open {
+    /* la classe s'ajoute au body via JS */
+    overflow: hidden;
+    transform: translateX(234px);
+}
+
 #main-menu {
     /* <nav> taille 0 et contenu masqué, affiché via JS */
     background: var(--dark-bckgnd);
@@ -643,7 +649,8 @@ address li {
 @media (min-width: 992px){
     body {
         flex-direction: column; /* affiche le menu en haut de la page */
-        transform: translateX(0) !important; /* En cas de redimenssionnement menu ouvett */
+        /* Pose probleme pour la modal */
+        /*transform: translateX(0) !important; !* En cas de redimenssionnement menu ouvett *!*/
     }
 
     .container {

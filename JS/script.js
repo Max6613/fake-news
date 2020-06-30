@@ -1,12 +1,9 @@
 // affiche ou masque le menu nav en fonction de l'etat de la checkbox'
 $("input[name=burger-check]").change(function () {
     if ($(this).is(":checked")){
-        let menuWidth = $("#main-menu").css("width");
-        $("body").css("overflow", "hidden");
-        $("body").css("transform", "translateX(" + menuWidth + ")");
+        $("body").addClass("open");
     } else {
-        $("body").css("overflow", "auto");
-        $("body").css("transform", "translateX(0)");
+        $("body").removeClass("open");
     }
 });
 
