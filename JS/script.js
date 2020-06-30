@@ -10,13 +10,16 @@ $("input[name=burger-check]").change(function () {
 });
 
 
-
 //____________Form contact + modal____________
-//Supprime les message d'erreur au focus
+//Supprime UN message d'erreur s'il existe
 function delLabel(name) {
-    $("label[for=" + name).remove();
+    if ($("label[for=" + name).length){
+        console.log("azertyuio");
+        $("label[for=" + name).remove();
+    }
 }
 
+//Si focus sur input/textarea -> appel fonction de suppression de message d'erreur
 $("input[name=name]").focus(function () {
     delLabel(this.getAttribute("name"));
 });
@@ -93,20 +96,26 @@ function formVerif(){
     let emailRegex = new RegExp(/^[a-z0-9._-]+@[a-z0-9._-]+.[a-z]{2,6}$/);
 
     for (let key in inputs){
+        //Suppression des messages d'erreurs existants
+        delLabel(key);
+
         switch (key){
             case "name":
+                //si name vide ou ne correspond pas à la regex
                 if (inputs[key].val() === "" || !nameRegex.test(inputs[key].val())){
                     //Nom invalide
                     errors.push(key);
                 }
                 break;
             case "email":
+                //si email vide ou ne correspond pas à la regex
                 if (inputs["email"].val() === "" || !emailRegex.test(inputs["email"].val())){
                     //mail invalide
                     errors.push(key);
                 }
                 break;
             case "mess":
+                //si message vide
                 if (inputs["mess"].val() === ""){
                     //message invalide
                     errors.push(key);
@@ -123,5 +132,3 @@ function closeModal() {
     $(".modal").remove();
     $(".layer").remove();
 }
-
-//TODO supprimer les messages d'erreurs lors du rappel
