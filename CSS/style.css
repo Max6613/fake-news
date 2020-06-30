@@ -174,6 +174,7 @@ h3 {
     overflow-x: hidden;
     text-align: left;
     text-transform: uppercase;
+    transition: flex-basis 300ms;
 }
 
 
@@ -418,10 +419,11 @@ footer {
 
 address li {
     display: flex;
+    padding-left: 15px;
 }
 
     address li > i {
-        padding: 0 15px;
+        margin-right: 15px;
     }
 
 .contact-links li{
@@ -431,8 +433,10 @@ address li {
 
 /*--Icones--*/
 .footer-icon {
-    /*TODO icones arrondies*/
-    border-radius: ;
+    /* CA MARCHE PAS */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
 }
 
 
@@ -656,6 +660,7 @@ address li {
         margin-bottom: 100px;
         overflow-x: inherit;
         text-align: left;
+
     }
 
         #main-menu .menu-icon {
