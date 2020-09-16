@@ -15,7 +15,7 @@ $(document).ready(function () {
         if($(window).width() > 991 && $("#burger-cmd").prop("checked")){
             $("#burger-cmd").prop("checked", false);
 
-            /* Le changement d'état de la checkbox via JS
+            /* Le changement d'état de la checkbox via js
                ne déclenche pas l'event change */
             $("body").removeClass("open");
         }

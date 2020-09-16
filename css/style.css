@@ -166,13 +166,13 @@ h3 {
 
 /*----Menu nav----*/
 .open {
-    /* la classe s'ajoute au body via JS */
+    /* la classe s'ajoute au body via js */
     overflow: hidden;
     transform: translateX(234px);
 }
 
 #main-menu {
-    /* <nav> taille 0 et contenu masqué, affiché via JS */
+    /* <nav> taille 0 et contenu masqué, affiché via js */
     background: var(--dark-bckgnd);
     color: var(--light-bckgnd);
     height: 100vh;
